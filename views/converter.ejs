@@ -1,0 +1,30 @@
+<html>
+  <div class="jumbotron text-center">
+  <% include header %>
+  <h1>BTC USD Converter</h1>
+    <div class="inputs">
+      <label>Amount in BTC</label>
+      <input type="text" id="btc" value="1" onkeyup="btcusd()" onChange="btcusd()"> = 
+      <input type="text" id="usd" value="<%= lastPrice %>" onkeyup="usdbtc()" onChange="usdbtc()">
+      <label>Amount in USD</label>
+    </div>
+  </div>
+
+  <script>
+
+    function btcusd() {
+      let market_price = <%= lastPrice %>;
+      let btc_value = document.getElementById("btc").value;
+      let calc = btc_value * market_price;
+      document.getElementById("usd").value = calc.toFixed(2);
+    }
+
+    function usdbtc() {
+      let market_price = <%= lastPrice %>;
+      let usd_value = document.getElementById("usd").value;
+      let calc = usd_value / market_price;
+      document.getElementById("btc").value = calc.toFixed(8);
+    }
+
+  </script>
+</html>

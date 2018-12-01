@@ -1,0 +1,16 @@
+<html>
+  <div class="jumbotron text-center">
+    <% include header %>
+    <!-- <h3>Here is your wallet info:</h3> -->
+    <div class="card border-primary mb-3" style="max-width: 50rem; margin: auto">
+        <div class="card-header"><h4><strong>Here is your wallet info:</strong></h4></div>
+        <div class="card-body">
+          <!-- <h4 class="card-title">Primary card title</h4> -->
+          <p class="card-text"><strong>Mnemonic: <%= brainsrc %></strong></p>
+          <p class="card-text"><strong>Address: <%= addr %></strong></p>
+          <p class="card-text"><strong>Private Key: <%= priv %></strong></p>
+        </div>
+      </div>
+  </div>
+</html>    
+
